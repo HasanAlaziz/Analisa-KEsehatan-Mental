@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Analisa-Kesehatan-Mental</title>
+    <link rel="icon" type="image/x-icon" href="static/assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script
+      src="https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Google fonts-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Varela+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="static/css/styles.css" rel="stylesheet" />
+  </head>
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container px-4 px-lg-5">
+        <a class="navbar-brand" href="#page-top">Kesehatan Mental</a>
+        <button
+          class="navbar-toggler navbar-toggler-right"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dashboard">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#test">test</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+      <div
+        class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center"
+      >
+        <div class="d-flex justify-content-center">
+          <div class="text-center">
+            <h1 class="mx-auto my-0 text-uppercase">Detection Strees</h1>
+            <h2 class="text-white-50 mx-auto mt-2 mb-5">
+              Pahami Stres Anda, Kendalikan Kesehatan Mental.
+            </h2>
+            <a class="btn btn-primary" href="#test">Get Started</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- About-->
+    <section class="about-section text-center" id="about">
+      <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+          <div class="col-lg-8">
+            <h2 class="text-white mb-4">Kesehatan mental</h2>
+            <p class="text-white-50">
+              bagian dari kehidupan yang tak dapat dihindari, tetapi jika tidak
+              dikelola dengan baik, stres dapat memengaruhi kesehatan fisik dan
+              mental kita secara signifikan.
+            </p>
+            <div class="form-container" id="test">
+              <!-- <form method="POST" action="/predict"> -->
+              <!-- Input fields for all the features -->
+              <!-- {% for feature in ['Openness', 'Conscientiousness',
+                'Extraversion', 'Agreeableness', 'Neuroticism', 'sleep_time',
+                'wake_time', 'sleep_duration', 'PSQI_score', 'call_duration',
+                'num_calls', 'num_sms', 'screen_on_time', 'skin_conductance',
+                'accelerometer', 'mobility_radius', 'mobility_distance'] %}
+                <label
+                  for="{{ feature }}"
+                  class="form-label"
+                  style="color: white"
+                  >{{ feature }}</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="{{ feature }}"
+                  required
+                />
+                {% endfor %}
+                <br />
+                <button type="submit" class="btn btn-success">
+                  Predict Stress Level
+                </button>
+              </form> -->
+              <form method="POST" action="/predict">
+                <!-- Input fields with placeholder for each feature -->
+                <label for="Openness" class="form-label" style="color: white"
+                  >Openness</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="Openness"
+                  placeholder="Masukan Nilai Untuk "
+                  required
+                />
+                <br />
+
+                <label
+                  for="Conscientiousness"
+                  class="form-label"
+                  style="color: white"
+                  >Conscientiousness</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="Conscientiousness"
+                  placeholder="Enter value for Conscientiousness"
+                  required
+                />
+                <br />
+
+                <label
+                  for="Extraversion"
+                  class="form-label"
+                  style="color: white"
+                  >Extraversion</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="Extraversion"
+                  placeholder="Enter value for Extraversion"
+                  required
+                />
+                <br />
+
+                <label
+                  for="Agreeableness"
+                  class="form-label"
+                  style="color: white"
+                  >Agreeableness</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="Agreeableness"
+                  placeholder="Enter value for Agreeableness"
+                  required
+                />
+                <br />
+
+                <label for="Neuroticism" class="form-label" style="color: white"
+                  >Neuroticism</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="Neuroticism"
+                  placeholder="Enter value for Neuroticism"
+                  required
+                />
+                <br />
+
+                <label for="sleep_time" class="form-label" style="color: white"
+                  >Sleep Time</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="sleep_time"
+                  placeholder="Masukan Waktu tidur Anda"
+                  required
+                />
+                <br />
+
+                <label for="wake_time" class="form-label" style="color: white"
+                  >Wake Time</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="wake_time"
+                  placeholder="Masukan Waktu bangun tidur"
+                  required
+                />
+                <br />
+
+                <label
+                  for="sleep_duration"
+                  class="form-label"
+                  style="color: white"
+                  >Sleep Duration</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="sleep_duration"
+                  placeholder="Masukan Durasi tidur Anda"
+                  required
+                />
+                <br />
+
+                <label for="PSQI_score" class="form-label" style="color: white"
+                  >PSQI Score</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="PSQI_score"
+                  placeholder="Enter PSQI Score"
+                  required
+                />
+                <br />
+
+                <label
+                  for="call_duration"
+                  class="form-label"
+                  style="color: white"
+                  >Call Duration</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="call_duration"
+                  placeholder="Masukan Durasi panggilan telepon Dalam menit"
+                  required
+                />
+                <br />
+
+                <label for="num_calls" class="form-label" style="color: white"
+                  >Number of Calls</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="num_calls"
+                  placeholder="Masukan Jumlah Panggilan Dalam Hari"
+                  required
+                />
+                <br />
+
+                <label for="num_sms" class="form-label" style="color: white"
+                  >Number of SMS</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="num_sms"
+                  placeholder="Masukan Jumlah SMS yang diterima dan dikirrm"
+                  required
+                />
+                <br />
+
+                <label
+                  for="screen_on_time"
+                  class="form-label"
+                  style="color: white"
+                  >Screen On Time</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="screen_on_time"
+                  placeholder="Masukan Waktu yang dibagikan di layar"
+                  required
+                />
+                <br />
+
+                <label
+                  for="skin_conductance"
+                  class="form-label"
+                  style="color: white"
+                  >Skin Conductance</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="skin_conductance"
+                  placeholder="Enter Skin Conductance"
+                  required
+                />
+                <br />
+
+                <label
+                  for="accelerometer"
+                  class="form-label"
+                  style="color: white"
+                  >Accelerometer</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="accelerometer"
+                  placeholder="Masukan Data gerakan tubuh"
+                  required
+                />
+                <br />
+
+                <label
+                  for="mobility_radius"
+                  class="form-label"
+                  style="color: white"
+                  >Mobility Radius</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="mobility_radius"
+                  placeholder="Masukan Radius pergerakan"
+                  required
+                />
+                <br />
+
+                <label
+                  for="mobility_distance"
+                  class="form-label"
+                  style="color: white"
+                  >Mobility Distance</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  step="any"
+                  name="mobility_distance"
+                  placeholder="Masukan Jarak yang ditempuh"
+                  required[]
+                />
+                <br />
+
+                <br />
+                <button type="submit" class="btn btn-success">
+                  Predict Stress Level
+                </button>
+              </form>
+
+              <!-- {% if prediction_text %}
+              <div class="prediction" style="color: white">
+                <p>{{ prediction_text }}</p>
+              </div>
+              {% endif %} -->
+              {% if prediction_text %}
+              <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+              <script type="text/javascript">
+                Swal.fire({
+                  title: "Hasil Prediksi",
+                  text: "{{ prediction_text }}",
+                  icon: "info",
+                  confirmButtonText: "OK",
+                });
+              </script>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <img class="img-fluid" src="/assets/img/ipad.png" alt="..." />
+      </div>
+    </section>
+    <!-- Projects-->
+    <section class="projects-section bg-light" id="dashboard">
+      <div class="container px-4 px-lg-5">
+        <!-- Featured Project Row-->
+        <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+          <div class="col-xl-12 col-lg-7">
+            <div
+              class="tableauPlaceholder"
+              id="viz1731710812643"
+              style="position: relative"
+            >
+              <noscript
+                ><a href="#"
+                  ><img
+                    alt="Dashboard 1 "
+                    src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VisualisasiDepresiDiIndonesia&#47;Dashboard1&#47;1_rss.png"
+                    style="border: none" /></a></noscript
+              ><object class="tableauViz" style="display: none">
+                <param
+                  name="host_url"
+                  value="https%3A%2F%2Fpublic.tableau.com%2F"
+                />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param
+                  name="name"
+                  value="VisualisasiDepresiDiIndonesia&#47;Dashboard1"
+                />
+                <param name="tabs" value="no" />
+                <param name="toolbar" value="yes" />
+                <param
+                  name="static_image"
+                  value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Vi&#47;VisualisasiDepresiDiIndonesia&#47;Dashboard1&#47;1.png"
+                />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_overlay" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+              </object>
+            </div>
+            <script type="text/javascript">
+              var divElement = document.getElementById("viz1731710812643");
+              var vizElement = divElement.getElementsByTagName("object")[0];
+              if (divElement.offsetWidth > 800) {
+                vizElement.style.width = "1000px";
+                vizElement.style.height = "827px";
+              } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = "1000px";
+                vizElement.style.height = "827px";
+              } else {
+                vizElement.style.width = "100%";
+                vizElement.style.height = "1627px";
+              }
+              var scriptElement = document.createElement("script");
+              scriptElement.src =
+                "https://public.tableau.com/javascripts/api/viz_v1.js";
+              vizElement.parentNode.insertBefore(scriptElement, vizElement);
+            </script>
+            <div class="col-xl-12 col-lg-5">
+              <div class="featured-text text-center text-lg-left">
+                <!-- <h4>Shoreline</h4> -->
+                <p class="text-black-50 mb-0">
+                  Data Survei Kesehatan Indonesia 2023 (Badan Pusat Statistik
+                  Indonesia)
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer-->
+    <footer class="footer bg-black small text-center text-white-50">
+      <div class="container px-4 px-lg-5">Copyright &copy; Prueba 2024</div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+  </body>
+</html>
